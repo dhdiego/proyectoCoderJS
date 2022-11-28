@@ -1,0 +1,19 @@
+h1 {
+    
+    margin: 300px auto 500px;
+    width: 500px;
+    height: 250px;
+    padding: 25px;
+    color:cadetblue;
+    background-color: aliceblue;
+    border-radius: 4px;
+    text-align: center;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    font-size: 5em;
+}
+
+body {
+    background: rgb(34,193,195);
+    background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 97%);
+}
