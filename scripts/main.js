@@ -21,4 +21,7 @@ if( hora >= 6 && hora <=12) {
 
 
 // ----------- Otros ejercicios para la consola----
-// para ver el otro js y sus ejercicios habria que indicar la ruta    <script src="scripts/ejercicio.js"></script>
+// para ver el otro js y sus ejercicios habria que indicar la ruta   
+/*  <script src="scripts/ejercicio1.js"></script>
+ <script src="scripts/ejercicio2.js"></script>
+ <script src="scripts/ejercicio3.js"></script> */
