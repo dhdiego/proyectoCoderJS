@@ -31,7 +31,7 @@ arrayJugador.push(jugadorMessi);
 arrayJugador.push(jugadorDePaul);
 arrayJugador.push(jugadorDiMaria);
 arrayJugador.push(jugadorDibu);
-
+arrayJugador.push(jugadorAlvarez);
 console.log(arrayJugador)
 
 function menu() {
