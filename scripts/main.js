@@ -57,7 +57,7 @@ function altaJugador(){
 // dar de baja un jugador (ingresar el puesto por Ejemplo Messi = 10)
 
 function bajaJugador(){
-    let puesto = parseInt(prompt('Ingrese el Puesto del jugador'));
+    let puesto = parseInt(prompt('Ingrese el Puesto del jugador: \n A) MESSI = 10, \n B) De Paul = 7,  \n C) DiMaria = 23, \n D) Dibu Martinez = 1, \nE)Julian Alvarez = 19 '));
     let jugador = arrayJugador.find(jugador => jugador.puesto === puesto);
     let indice = arrayJugador.indexOf(jugador);
     arrayJugador.splice(indice, 1);
@@ -67,7 +67,7 @@ function bajaJugador(){
 // modificar un jugador (ingresar el puesto ejemplo messi = 10)
 
 function modificarJugador(){
-    let puesto = parseInt(prompt('Ingrese el Puesto del jugador'));
+    let puesto = parseInt(prompt('Ingrese el Puesto del jugador: \n A) MESSI = 10, \n B) De Paul = 7,  \n C) DiMaria = 23, \n D) Dibu Martinez = 1, \nE)Julian Alvarez = 19 '));
     let jugador = arrayJugador.find(jugador => jugador.puesto === puesto);
     let indice = arrayJugador.indexOf(jugador);
     let nombre = prompt('Ingrese el nombre del Jugador');
@@ -82,7 +82,7 @@ function modificarJugador(){
 // consultar un jugador (debe ingresar el numero de camiseta ejemplo Messi =10)
 
 function consultaJugador(){
-    let puesto = parseInt(prompt('Ingrese el puesto del jugador'));
+    let puesto = parseInt(prompt('Ingrese el Puesto del jugador: \n A) MESSI = 10, \n B) De Paul = 7,  \n C) DiMaria = 23, \n D) Dibu Martinez = 1, \nE)Julian Alvarez = 19 '));
     let jugador = arrayJugador.find(jugador => jugador.puesto === puesto);
     console.log(jugador);
 }
@@ -90,7 +90,7 @@ function consultaJugador(){
 // salir 
 
 function salir() {
-    alert('Gracias por ver nuestro Visualizador');
+    alert('Gracias por ver nuestro Visualizador Mundialistico');
 }
 
 let opcion = menu();
