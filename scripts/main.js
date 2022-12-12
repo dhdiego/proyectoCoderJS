@@ -54,7 +54,7 @@ function altaJugador(){
     console.log(arrayJugador);
 }
 
-// dar de baja un jugador
+// dar de baja un jugador (ingresar el puesto por Ejemplo Messi = 10)
 
 function bajaJugador(){
     let puesto = parseInt(prompt('Ingrese el Puesto del jugador'));
@@ -64,7 +64,7 @@ function bajaJugador(){
     console.log(arrayJugador);
 }
 
-// modificar un jugador
+// modificar un jugador (ingresar el puesto ejemplo messi = 10)
 
 function modificarJugador(){
     let puesto = parseInt(prompt('Ingrese el Puesto del jugador'));
@@ -79,7 +79,7 @@ function modificarJugador(){
 
 }
 
-// consultar un jugador
+// consultar un jugador (debe ingresar el numero de camiseta ejemplo Messi =10)
 
 function consultaJugador(){
     let puesto = parseInt(prompt('Ingrese el puesto del jugador'));
