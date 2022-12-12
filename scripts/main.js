@@ -20,8 +20,8 @@ class Jugador {
 }
 
 const jugadorMessi = new Jugador('Lionel', 'Messi', 10, 10 );
-const jugadorDePaul = new Jugador('Rodrigo', 'DePaul', 7, 7 );
-const jugadorDiMaria = new Jugador('Angel', 'DiMaria', 23, 7 );
+const jugadorDePaul = new Jugador('Rodrigo', 'De Paul', 7, 7 );
+const jugadorDiMaria = new Jugador('Angel', 'Di Maria', 23, 7 );
 const jugadorDibu = new Jugador('Damian', 'Martinez', 1 , 9 );
 const jugadorAlvarez = new Jugador('Julian', 'Alvarez', 19 , 5 );
 
