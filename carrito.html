@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="./img/faviconTdr.png"/>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <title>3era Preentrega Diego Diaz com 34105</title>
 </head>
 <body>
-    <div class="contenedor">
+    <div class="contenedor-wrapper">
     <aside>
             <header>
                 <h1 class="logo">Tienda De Rock</h1>
@@ -25,7 +25,11 @@
                     </a></li>
 
                     <li>
-                        <a class="btn-menu btn-carrito active" href="./carrito.html"><i class="bi bi-cart-fill"></i></a>Carrito <span class="numeroCarrito">0</span></li>
+                        <a class="btn-menu btn-carrito active" href="./carrito.html">
+                            <i class="bi bi-cart-fill"></i>Carrito: <span class="numeroCarrito">0</span>
+                        </a>
+                    </li>
+                    
             <ul>
 
         </nav>
@@ -40,10 +44,12 @@
     <main>
         <h2 class="titulo-principal">Carrito</h2>
       <div class="contenedor-carrito">
-        <p class="carrito-vacio">Tu Carrito Se Encuentra Vacio</p>
-        <div class="carrito-productos">
+        <p class="carrito-vacio">Tu Carrito Se Encuentra Vacio. <i class="bi bi-bag-dash"></i> </p>
+
+        <div class="carrito-productos disabled">
+           
             <div class="carrito-producto">
-                <img src="./img/vinilos/The Doors – Strange Days.jpg" alt="">
+                <img class="carrito-producto-imagen" src="./img/vinilos/The Doors – Strange Days.jpg" alt="">
                 <div class="carrito-producto-titulo">
                     <small>Producto</small>
                     <h3>The Doors - Strange Days</h3>
@@ -51,6 +57,8 @@
                     <small>Cantidad:</small>
                     <p>1</p>
                 </div>
+            </div>
+
 
                 <div class="carrito-producto-precio">
                     <small>Precio:</small>
@@ -59,15 +67,16 @@
                 <div class="carrito-producto-subtotal">
                     <small>Subtotal:</small>
                     <p>$13500</p>
-
+                
                 </div>
+            
 
                 <button class="carrito-producto-eliminar"><i class="bi bi-trash-fill"></i></button>
 
 
                 </div>
                 <div class="carrito-producto">
-                    <img src="./img/vinilos/Iron Maiden – The Number Of The Beast.jpg" alt="">
+                    <img class="carrito-producto-imagen" src="./img/vinilos/Iron Maiden – The Number Of The Beast.jpg" alt="">
                     <div class="carrito-producto-titulo">
                         <small>Producto</small>
                         <h3>Iron Maiden - The Number of The Beast</h3>
@@ -75,13 +84,14 @@
                         <small>Cantidad:</small>
                         <p>1</p>
                     </div>
+                </div>
     
                     <div class="carrito-producto-precio">
-                        <small>Precio:</small>
+                        <small>Precio: </small>
                         <p>$10500</p>
                     </div>
                     <div class="carrito-producto-subtotal">
-                        <small>Subtotal:</small>
+                        <small>Subtotal: </small>
                         <p>$24000</p>
     
                     </div>
@@ -93,7 +103,7 @@
             
         </div>
 
-        <div class="carrito-acciones">
+        <div class="carrito-acciones disabled">
             <div class="carrito-acciones-izquierda">
                 <button class="carrito-acciones-vaciar">Vaciar Carrito</button>
 
@@ -109,7 +119,7 @@
 
         </div>
 
-
+        <p class="carrito-comprado disabled">Muchas Gracias Por Tu Compra. <i class="bi bi-music-note-list"></i> </p>
       </div>
 
     </main>
