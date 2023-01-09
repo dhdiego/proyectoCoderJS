@@ -1,5 +1,24 @@
-
-body {
-    background: rgb(34,193,195);
-    background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 97%);
+ @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+:root {
+    --colorPrincipal: #fadd34;
+    --colorSecundario: #111007;
+    
 }
+
+* { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', Courier, monospace;
+
+
+ }
+
+ ul {
+    list-style-type: none;
+
+ }
+
+ a {
+    text-decoration: none;
+ }
