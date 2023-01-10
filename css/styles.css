@@ -274,6 +274,6 @@ font-weight: 700;
    gap: 1rem;
 }
 
-.disable {
-
+.disabled {
+ display: none;
 }
