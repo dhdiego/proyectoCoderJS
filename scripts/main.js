@@ -6,7 +6,7 @@ const productos = [
         imagen: './img/vinilos/The Doors – Strange Days.jpg',
         categoria: {
             nombre: 'vinilos',
-            id: 'vinilos'
+            id: 'vinilos',
         },
         precio: 13500,
     },
@@ -17,7 +17,7 @@ const productos = [
         imagen: './img/vinilos/Babasonicos – Infame.jpg',
         categoria: {
             nombre: 'vinilos',
-            id: 'vinilos'
+            id: 'vinilos',
         },
         precio: 9900,
     },
@@ -28,7 +28,7 @@ const productos = [
         imagen: './img/vinilos/Iron Maiden – The Number Of The Beast.jpg',
         categoria: {
             nombre: 'vinilos',
-            id: 'vinilos'
+            id: 'vinilos',
         },
         precio: 10500,
     },
@@ -39,7 +39,7 @@ const productos = [
         imagen: './img/vinilos/Rolling Stones – Tattoo You.jpg',
         categoria: {
             nombre: 'vinilos',
-            id: 'vinilos'
+            id: 'Vinilos',
         },
         precio: 13500,
     },
@@ -50,7 +50,7 @@ const productos = [
         imagen: './img/vinilos/Thelonious Monk – Genius Of Modern Music (Volume One).jpg',
         categoria: {
             nombre: 'vinilos',
-            id: 'vinilo'
+            id: 'vinilos',
         },
         precio: 16800,
     },
@@ -60,7 +60,7 @@ const productos = [
         imagen: './img/vinilos/Led Zeppelin – Led Zeppelin.jpg',
         categoria: {
             nombre: 'vinilos',
-            id: 'vinilos'
+            id: 'vinilos',
         },
         precio: 14000,
     },
@@ -72,7 +72,7 @@ const productos = [
         imagen: './img/cds/acdcrazor.jpg',
         categoria: {
             nombre: 'cds',
-            id: 'cds'
+            id: 'cds',
         },
         precio: 990,
     },
@@ -83,7 +83,7 @@ const productos = [
         imagen: './img/cds/Depeche Mode – Violator.jpg',
         categoria: {
             nombre: 'cds',
-            id: 'cds'
+            id: 'cds',
         },
         precio: 1200,
     },
@@ -94,7 +94,7 @@ const productos = [
         imagen: './img/cds/Escalandrum – vertigo.jpg',
         categoria: {
             nombre: 'cds',
-            id: 'cds'
+            id: 'cds',
         },
         precio: 1500,
     },
@@ -104,7 +104,7 @@ const productos = [
         imagen: './img/cds/Pharoah Sanders – Karma.jpg',
         categoria: {
             nombre: 'cds',
-            id: 'cds'
+            id: 'cds',
         },
         precio: 13500,
     },
@@ -114,7 +114,7 @@ const productos = [
         imagen: './img/cds/Pink Floyd – The Piper At The Gates Of Dawn.jpg',
         categoria: {
             nombre: 'cds',
-            id: 'cds'
+            id: 'cds',
         },
         precio: 1500,
     },
@@ -125,7 +125,7 @@ const productos = [
         imagen: './img/cds/Prince – Prince.jpg',
         categoria: {
             nombre: 'cds',
-            id: 'cds'
+            id: 'cds',
         },
         precio: 2000,
     },
@@ -138,7 +138,7 @@ const productos = [
         imagen: './img/cass/Arctic Monkeys – Whatever.jpg',
         categoria: {
             nombre: 'cassettes',
-            id: 'cassettes'
+            id: 'cassettes',
         },
         precio: 1200,
     },
@@ -149,7 +149,7 @@ const productos = [
         imagen: './img/cass/Sumo  – Divididos Por La Felicidad.jpg',
         categoria: {
             nombre: 'cassettes',
-            id: 'cassettes'
+            id: 'cassettes',
         },
         precio: 15000,
     },
@@ -160,9 +160,9 @@ const productos = [
         imagen: './img/cass/pr – Oktubre.jpg',
         categoria: {
             nombre: 'cassettes',
-            id: 'cassettes'
+            id: 'cassettes',
         },
-        precio: 30000,
+        precio: 15000,
     },
     
     
@@ -173,7 +173,8 @@ const productos = [
 const contenedorProductos = document.querySelector('#contenedor-productos');
 const botonesCategorias = document.querySelectorAll('.btn-categoria');
 const tituloPrincipal = document.querySelector('#titulo-principal');
-let botonesAgregar = document.querySelectorAll('producto-agregar');
+let botonesAgregar = document.querySelectorAll('.producto-agregar');
+const numeroCarrito = document.querySelector('#numero-carrito');
 
 
 function cargarProductos(productosElegidos) {
@@ -200,6 +201,7 @@ function cargarProductos(productosElegidos) {
     })
 
     actualizarBotonesAgregar();
+    
    
 
 }
@@ -212,17 +214,17 @@ botonesCategorias.forEach(boton => {
 
         e.currentTarget.classList.add('active');
 
-        if (e.currentTarget.id != 'todos'){
+        if (e.currentTarget.id != 'todos') {
             const productoCategoria = productos.find(producto => producto.categoria.id === e.currentTarget.id);
 
-            tituloPrincipal.InnerText = productoCategoria.categoria.nombre;
+            tituloPrincipal.innerText = productoCategoria.categoria.nombre;
 
             const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id);
 
         cargarProductos(productosBoton);
 
         } else {
-            tituloPrincipal.InnerText = 'Todos Los Productos';
+            tituloPrincipal.innerText = 'Todos Los Productos';
             cargarProductos(productos);
         }
         
@@ -230,8 +232,8 @@ botonesCategorias.forEach(boton => {
     })
 })
 
-function actualizarBotonesAgregar () {
-    botonesAgregar = document.querySelectorAll('producto-agregar');
+function actualizarBotonesAgregar() {
+    botonesAgregar = document.querySelectorAll('.producto-agregar');
 
     botonesAgregar.forEach(boton => {
         boton.addEventListener('click', agregarAlCarrito);
@@ -239,22 +241,32 @@ function actualizarBotonesAgregar () {
 
 }
 
+
 const productosEnCarrito = [];
 
-function agregarAlCarrito(e) {
-    const idBoton = e.currentTarget.id;
-    const productoAgregado = productos.find(producto => producto.i === idBoton);
+    function agregarAlCarrito(e) {
+        const idBoton = e.currentTarget.id;
+        const productoAgregado = productos.find(producto => producto.id === idBoton);
+    
+        if(productosEnCarrito.some(producto => producto.id === idBoton)) {
+            const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
+            productosEnCarrito[index].cantidad++;
+        } else {
+            productoAgregado.cantidad = 1;
+            productosEnCarrito.push(productoAgregado);
+        }
 
-    if (productosEnCarrito.some(producto => producto.id === idBoton)) {
+    actualizarContador(); 
 
-        const index = productosEnCarrito.findIndex( producto => producto.id === idBoton);
-        productosEnCarrito[index].cantidad++;
-    } else {
-        productoAgregado.cantidad = 1;
+}
 
-        productosEnCarrito.push(productoAgregado);
+
+
+
+function actualizarContador() {
+    let nuevoContador = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
+    numeroCarrito.innerText = nuevoContador;
 }
 
 
 
-}
