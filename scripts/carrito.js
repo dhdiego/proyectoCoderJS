@@ -79,9 +79,6 @@ function actualizarBotonesEliminar() {
 
 function eliminarDelCarrito(e) {
     const idBoton = e.currentTarget.id;
-    
-   
-
     const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
     productosEnCarrito.splice(index, 1);
     cargarProductosCarrito();
@@ -98,6 +95,7 @@ function vaciarCarrito() {
     cargarProductosCarrito();
 
 }
+
 function actualizarTotal() {
     const totalCalculado = productosEnCarrito.reduce((acc,producto) => acc + (producto.precio * producto.cantidad), 0);
 
