@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="./img/faviconTdr.png"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 
@@ -13,11 +14,18 @@
 </head>
 <body>
     <div class="contenedor-wrapper">
-    <aside>
-            <header>
+    
+            <header class="header-mobile">
+                <button class="open-menu" id="open-menu">
+                    <i class="bi bi-list"></i>
+                </button>
                 <h1 class="logo">Tienda De Rock</h1>
                 <a href="./index.html"><img src="./img/logotdr.png" alt="logotdr"></a>
             </header>
+            <aside class="aside-visible">
+                <button class="close-menu">
+                    <i class="bi bi-x-circle-fill"></i>
+                </button>
             <nav>
             <ul>
               
@@ -27,7 +35,7 @@
 
                     <li>
                         <a class="btn-menu btn-carrito active" href="./carrito.html">
-                            <i class="bi bi-cart-fill"></i>Carrito: <span class="numeroCarrito">0</span>
+                            <i class="bi bi-cart-fill"></i>Carrito<span class="numeroCarrito"></span>
                         </a>
                     </li>
                     
@@ -49,59 +57,7 @@
 
         <div id="carrito-productos" class="carrito-productos disabled">
            
-            <!-- <div class="carrito-producto">
-                <img class="carrito-producto-imagen" src="./img/vinilos/The Doors – Strange Days.jpg" alt="">
-                <div class="carrito-producto-titulo">
-                    <small>Producto</small>
-                    <h3>The Doors - Strange Days</h3>
-                <div class="carrito-producto-cantidad">
-                    <small>Cantidad:</small>
-                    <p>1</p>
-                </div>
-            </div>
-
-
-                <div class="carrito-producto-precio">
-                    <small>Precio:</small>
-                    <p>$13500</p>
-                </div>
-                <div class="carrito-producto-subtotal">
-                    <small>Subtotal:</small>
-                    <p>$13500</p>
-                
-                </div>
-            
-
-                <button class="carrito-producto-eliminar"><i class="bi bi-trash-fill"></i></button>
-
-
-                </div>
-                <div class="carrito-producto">
-                    <img class="carrito-producto-imagen" src="./img/vinilos/Iron Maiden – The Number Of The Beast.jpg" alt="">
-                    <div class="carrito-producto-titulo">
-                        <small>Producto</small>
-                        <h3>Iron Maiden - The Number of The Beast</h3>
-                    <div class="carrito-producto-cantidad">
-                        <small>Cantidad:</small>
-                        <p>1</p>
-                    </div>
-                </div>
-    
-                    <div class="carrito-producto-precio">
-                        <small>Precio: </small>
-                        <p>$10500</p>
-                    </div>
-                    <div class="carrito-producto-subtotal">
-                        <small>Subtotal: </small>
-                        <p>$24000</p>
-    
-                    </div> -->
-    
-                   <!--  <button class="carrito-producto-eliminar"><i class="bi bi-trash-fill"></i></button>
-    
-    
-                    </div> -->
-            
+           
         </div>
 
         <div id="carrito-acciones" class="carrito-acciones disabled">
@@ -129,6 +85,9 @@
 
 </div>
 
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="./scripts/carrito.js"></script>
+<script src="./scripts/menu.js"></script>
+
 </body>

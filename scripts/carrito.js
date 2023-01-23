@@ -7,7 +7,7 @@ const contenedorCarritoProductos = document.querySelector('#carrito-productos');
 const contenedorCarritoAcciones = document.querySelector('#carrito-acciones');
 const contenedorCarritoComprado = document.querySelector('#carrito-comprado');
 let botonesEliminar = document.querySelectorAll('.carrito-producto-eliminar');
-const botonVaciarCarrito = document.querySelector('#carrito-acciones-vaciar');
+const botonVaciar = document.querySelector('#carrito-acciones-vaciar');
 const contenedorTotal = document.querySelector('#total');
 const botonComprar = document.querySelector('#carrito-acciones-comprar');
 
@@ -78,6 +78,26 @@ function actualizarBotonesEliminar() {
 }
 
 function eliminarDelCarrito(e) {
+
+    Toastify({
+        text: "Ha eliminado el producto.",
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+        
+        background: "linear-gradient(to right, #fadd34, #111007)",
+        borderRadius: '2rem',
+        textTransform: 'uppercase',
+        fontSize: '1.5rem',
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
+
+
     const idBoton = e.currentTarget.id;
     const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
     productosEnCarrito.splice(index, 1);
@@ -87,12 +107,32 @@ function eliminarDelCarrito(e) {
 }
 
 botonVaciar.addEventListener('click', vaciarCarrito);
-
 function vaciarCarrito() {
 
-    productosEnCarrito.length = 0;
+    Swal.fire({
+        title: '¿Estás Seguro?',
+        icon: 'question',
+        html:
+          'Se van a borrar todos tus productos...',
+        
+        showCancelButton: true,
+        focusConfirm: false,
+        confirmButtonText: 'Si',
+        cancelButtonText:'No'
+        
+      }).then((result) => {
+        
+        if (result.isConfirmed) {
+            productosEnCarrito.length = 0;
+            localStorage.setItem('productos-en-carrito', JSON.stringify(productosEnCarrito));
+            cargarProductosCarrito();
+          
+        } 
+        
+      })
+   /*  productosEnCarrito.length = 0;
     localStorage.setItem('productos-en-carrito', JSON.stringify(productosEnCarrito));
-    cargarProductosCarrito();
+    cargarProductosCarrito(); */
 
 }
 
